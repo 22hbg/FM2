@@ -17,7 +17,7 @@ function refreshFeed()
 {
 	
     jQuery.getFeed({
-		url: "php/proxy.php?url="+url,
+		url: "http://22hbg.com/app/fmworld/php/proxy.php?url="+url,
 		success: function(feed)
 		{
 		$('#page1 #feed').html('');
