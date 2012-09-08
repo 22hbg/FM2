@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FM-World News</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1, user-scalable = no" />
+    <script type="text/javascript" charset="utf-8" src="cordova-1.9.0.js"></script>
+	<link rel="stylesheet" href="css/fmworld.css" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>    <script type="text/javascript" src="js/fmworld_rss.js"></script>
+	<script type="text/javascript" src="js/jquery.jfeed.js"></script>
+ 
+</head>
+<body onload="init()">
+<!-- begin first page -->
+<section id="page1" data-role="page" data-theme="a">
+    <header data-role="header">
+        <h1>FM-World News</h1>
+		<a href="#about" data-icon="info" data-transition="flip" class="ui-btn-right">About</a>
+    </header>
+
+    <div data-role="content" class="content">
+	<div class="ui-grid-a">
+		<div class="ui-block-a"><a href="javascript:emptyFeed();refreshFeed()" data-theme="a" data-icon="refresh" data-role="button">Aggiorna</a></div>
+		<div class="ui-block-b"><a href="#contact" data-theme="a" data-icon="alert" data-role="button">Segnala</a></div>
+	</div>
+        <div id="feed" data-inset="true" data-theme="a">
+        </div>
+    </div>
+
+    <footer data-role="footer">
+        <h2>&copy; 2012 - 22HBG S.r.l. </h2>
+    </footer>
+</section>
+<!-- end first page -->
+
+<section id="articolo" data-role="page" data-theme="a">
+   <header data-role="header">
+        		<h1 id="title_art">&nbsp;</h1>
+			<a href="#page1" data-icon="back" data-role="back" data-transition="slide" data-direction="reverse">Back</a>
+    </header>
+
+    <div data-role="content" class="content">
+		<div id="testo" style="font-size: 13px; font-family: Verdana; padding: 10px; text-align: justify;">
+		</div>
+    </div>
+
+    <footer data-role="footer">
+        <h2>&copy; 2012 - 22HBG S.r.l. </h2>
+    </footer>
+</section>
+
+<section id="contact" data-role="page" data-theme="a">
+	<header data-role="header">
+			<h1 id="title_art">Segnala</h1>
+			<a href="#page1" data-icon="back" data-role="back" data-transition="slide" data-direction="reverse">Back</a>
+	</header>
+
+    <div data-role="content" class="content">
+		<div id="form" style="font-size: 13px; font-family: Verdana; padding: 10px; text-align: justify;">
+			<div data-role="fieldcontain">
+
+			<form action="php/send.php" method="post">
+					 <input placeholder="Nome" type="text" name="name" id="name" value=""  />
+					 <input placeholder="E-Mail" type="text" name="email" id="email" value=""  />
+					 <textarea placeholder="Messaggio" style="height: 150px;" name="messaggio" id="messaggio" rows="10"></textarea>
+					 <input type="submit" value="Invia" />
+				</form>
+			</div>
+		</div>
+    </div>
+
+    <footer data-role="footer">
+        <h2>&copy; 2012 - 22HBG S.r.l. </h2>
+    </footer>
+</section>	
+
+<section id="about" data-role="page" data-theme="a">
+	<header data-role="header">
+			<h1 id="title_art">FM-World</h1>
+			<a href="#page1" data-icon="back" data-role="back" data-transition="slide" data-direction="reverse">Back</a>
+	</header>
+
+    <div data-role="content" class="content">
+		<div id="about" style="font-size: 13px; font-family: Verdana; padding: 10px; text-align: justify;">
+		
+		</div>
+    </div>
+
+    <footer data-role="footer">
+        <h2>&copy; 2012 - 22HBG S.r.l. </h2>
+    </footer>
+</section>	
+
+    </body>
+</html>
